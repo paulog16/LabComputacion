@@ -91,7 +91,55 @@ public class Tp8 {
             }
         }
         System.out.println("el numero mayor es: "+nummayor);
+        int sumar=0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (i==0){
+                    sumar+=s[i][j];
+                }
+            }
+        }
+        boolean diagonal;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if ((i!=j) && (s[i][j]==0)){
+                    diagonal=true;
+                }else if ( i==j && s[i][j]==0){
+                    diagonal=false;
+                }
+            }
+        }
         
+        int [][]p= new int [3][3];
+        for (int i = 0; i < p.length; i++) {
+            for (int j = 0; j < p.length; j++) {
+                if (i==j){
+                    p[i][j]=1;
+                }else{
+                    p[i][j]=0;
+                }
+            }
+        }
+        
+        for (int i = 0; i < p.length; i++) {
+            for (int j = 0; j < p.length; j++) {
+                System.out.print("["+p[i][j]+"]");
+            }
+            System.out.println("");
+        }
+        
+        int contp=0;
+        int contimp=0;
+        
+        for (int i = 0; i < s.length; i++) {
+            for (int j = 0; j < s.length; j++) {
+                if (s[i][j] % 2==0){
+                    contp++;
+                }else{
+                    contimp++;
+                }
+            }
+        }
     }
     
 }
