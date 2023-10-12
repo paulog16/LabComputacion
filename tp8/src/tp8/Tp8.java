@@ -140,6 +140,35 @@ public class Tp8 {
                 }
             }
         }
+
+        int[][] matrizOriginal = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int[][] matrizRotada = rotarMatriz90Grados(matrizOriginal);
+
+        // Imprimir la matriz rotada
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(matrizRotada[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
-    
+
+    public static int[][] rotarMatriz90Grados(int[][] matriz) {
+        int n = matriz.length;
+        int[][] matrizRotada = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrizRotada[i][j] = matriz[n - 1 - j][i];
+            }
+        }
+
+        return matrizRotada;
+    }
+
 }
